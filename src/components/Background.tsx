@@ -39,6 +39,7 @@ const Background = () => {
       opacity: number;
     }> = [];
 
+    // More masculine, tech-inspired color palette
     const colors = ['#1A1F2C', '#403E43', '#0EA5E9', '#000000e6', '#333'];
 
     for (let i = 0; i < 100; i++) {
@@ -94,4 +95,3 @@ const Background = () => {
 };
 
 export default Background;
-
