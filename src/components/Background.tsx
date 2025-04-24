@@ -39,41 +39,41 @@ const Background = () => {
       opacity: number;
     }> = [];
 
-    // More aggressive, tech-inspired color palette
-    const colors = ['#0A192F', '#112240', '#5CDB95', '#00FFFF', '#1E3A8A'];
+    // More aggressive, tech-inspired color palette with deeper blues and tech tones
+    const colors = ['#0A192F', '#112240', '#1E3A8A', '#00FFFF', '#2C3E50'];
 
-    for (let i = 0; i < 150; i++) {
+    for (let i = 0; i < 200; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        dx: (Math.random() - 0.5) * 2,
-        dy: (Math.random() - 0.5) * 2,
-        size: Math.random() * 30 + 10,
+        dx: (Math.random() - 0.5) * 3,
+        dy: (Math.random() - 0.5) * 3,
+        size: Math.random() * 40 + 15,
         color: colors[Math.floor(Math.random() * colors.length)],
-        opacity: Math.random() * 0.5 + 0.2,
+        opacity: Math.random() * 0.6 + 0.2,
       });
     }
 
     const animate = () => {
-      ctx.fillStyle = 'rgba(10, 25, 47, 0.08)';
+      ctx.fillStyle = 'rgba(10, 25, 47, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle) => {
-        // More dynamic particle movement
-        particle.x += particle.dx + (mouseX - canvas.width / 2) * 0.0003;
-        particle.y += particle.dy + (mouseY - canvas.height / 2) * 0.0003;
+        // More aggressive and dynamic particle movement
+        particle.x += particle.dx + (mouseX - canvas.width / 2) * 0.0004;
+        particle.y += particle.dy + (mouseY - canvas.height / 2) * 0.0004;
 
-        // Wrap around screen with more aggressive boundaries
-        if (particle.x < -50) particle.x = canvas.width + 50;
-        if (particle.x > canvas.width + 50) particle.x = -50;
-        if (particle.y < -50) particle.y = canvas.height + 50;
-        if (particle.y > canvas.height + 50) particle.y = -50;
+        // More aggressive screen wrapping with tech-like boundaries
+        if (particle.x < -100) particle.x = canvas.width + 100;
+        if (particle.x > canvas.width + 100) particle.x = -100;
+        if (particle.y < -100) particle.y = canvas.height + 100;
+        if (particle.y > canvas.height + 100) particle.y = -100;
 
-        // Angular, sharp-edged particle rendering
+        // Angular, circuit-board-like particle rendering
         ctx.beginPath();
         ctx.moveTo(particle.x, particle.y);
         ctx.lineTo(particle.x + particle.size, particle.y);
-        ctx.lineTo(particle.x, particle.y + particle.size);
+        ctx.lineTo(particle.x + particle.size/2, particle.y + particle.size);
         ctx.closePath();
         
         ctx.fillStyle = particle.color + Math.floor(particle.opacity * 255).toString(16);
