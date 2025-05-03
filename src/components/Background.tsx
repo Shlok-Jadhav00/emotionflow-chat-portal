@@ -142,7 +142,7 @@ const Background = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="fixed inset-0 -z-10 bg-[#0A192F]" />;
+  return <canvas ref={canvasRef} className="fixed inset-0 -z-10" />;
 };
 
 export default Background;
