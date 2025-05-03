@@ -1,6 +1,7 @@
-
 import { useEffect, useRef } from 'react';
 
+// This component is no longer used by default since we've switched to ThreeDBackground
+// Keeping it for reference
 const Background = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
